@@ -1,0 +1,52 @@
+/* components/ProcessSection.css */
+.process-section {
+    background-color: #000;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .process-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  
+  .process-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .step {
+    position: relative;
+    width: 200px;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  .step-content {
+    border: 1px dotted white;
+    border-radius: 50%;
+    padding: 30px;
+  }
+  
+  .step-content img {
+    margin-bottom: 10px;
+  }

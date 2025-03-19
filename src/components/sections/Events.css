@@ -1,0 +1,20 @@
+/* src/components/Events.css */
+.events {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .events h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .events p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.6;
+  }

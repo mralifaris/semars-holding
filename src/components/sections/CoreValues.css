@@ -1,0 +1,26 @@
+/* components/CoreValues.css */
+.core-values {
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .values-container {
+    display: flex;
+    justify-content: center; /* Center the value cards */
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .value-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 150px; /* Adjust width as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .value-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }

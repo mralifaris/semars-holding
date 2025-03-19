@@ -1,0 +1,88 @@
+/* Navbar Styles */
+.navbar {
+  box-sizing: border-box;
+  position: absolute;
+  width: 1589px;
+  height: 58.39px;
+  left: 50%;
+  top: 42.5px;
+  transform: translateX(-50%);
+  border-bottom: 1px solid #97AABE;
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background: transparent;
+}
+
+/* Left Section: Logo */
+.navbar-logo img {
+  height: 70px;
+}
+
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-links a:hover,
+.navbar-links .selected {
+  color: #d4af37;
+  font-weight: bold;
+}
+
+/* Contact Button */
+.navbar-contact {
+  background: transparent;
+  color: black;
+  border: 2px solid black;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-contact:hover {
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* Menu Button */
+.navbar-menu-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-menu-icon {
+  height: 30px;
+  width: 30px;
+}
+
+/* Line Below Navbar */
+.navbar-line {
+  position: absolute;
+  width: calc(100% - 80px);
+  height: 1px;
+  background-color: rgba(151, 170, 190, 0.5);
+  bottom: 0;
+  left: 40px;
+  right: 40px;
+}
