@@ -1,19 +1,18 @@
 /* Navbar Styles */
 .navbar {
   box-sizing: border-box;
-  position: absolute;
-  width: 1589px;
+  position: relative; /* ✅ Allows it to scroll naturally */
+  width: 100%;
+  max-width: 1657px;
   height: 58.39px;
-  left: 50%;
-  top: 42.5px;
-  transform: translateX(-50%);
+  margin-top: 35px;
   border-bottom: 1px solid #97AABE;
-  backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
   background: transparent;
+  z-index: 1000; /* ✅ Keeps it above background */
 }
 
 /* Left Section: Logo */

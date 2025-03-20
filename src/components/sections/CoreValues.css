@@ -1,26 +1,70 @@
-/* components/CoreValues.css */
+/* Core Values Section */
 .core-values {
-    padding: 40px;
-    text-align: center;
-  }
-  
-  .values-container {
-    display: flex;
-    justify-content: center; /* Center the value cards */
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .value-card {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    width: 150px; /* Adjust width as needed */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .value-card img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-  }
+  padding: 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Our Core Values Heading */
+.core-values h2 {
+  font-size: 90px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.core-values.visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Container for Value Cards */
+.values-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Individual Value Card */
+.value-card {
+  background: transparent;
+  border-radius: 10px;
+  padding: 25px;
+  width: 180px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+/* Slide-in animation */
+.value-card.slide-left {
+  transform: translateX(-50px);
+}
+
+.value-card.slide-right {
+  transform: translateX(50px);
+}
+
+.core-values.visible .value-card {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Icons Inside Cards */
+.value-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+/* Text Below Icons */
+.value-card h3 {
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+}
