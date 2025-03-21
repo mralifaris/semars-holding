@@ -1,6 +1,6 @@
 /* components/ProcessSection.css */
 .process-section {
-    background-color: #000;
+    background-image: url("../../assets/processback.png"); 
     color: white;
     padding: 60px 20px;
     text-align: center;

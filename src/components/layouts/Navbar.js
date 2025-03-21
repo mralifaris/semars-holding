@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import Logo from "../../assets/logo.png";
 import list from "../../assets/Vector.png";
@@ -12,14 +13,10 @@ function Navbar() {
       </div>
       <ul className="navbar-links">
         <li>
-          <ScrollLink to="header" smooth={true} duration={500} offset={-50}>
-            Home
-          </ScrollLink>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <ScrollLink to="about" smooth={true} duration={500} offset={-50}>
-            About Us
-          </ScrollLink>
+          <Link to="/about-us">About Us</Link>
         </li>
         <li>
           <ScrollLink to="services" smooth={true} duration={500} offset={-50}>

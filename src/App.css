@@ -1,30 +1,33 @@
+/* Default Body Styles */
 body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  color: #333;
+  position: relative;
+  overflow-x: hidden;
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* Background for Home Page */
+.home-page {
+  background-image: url("./assets/Noise\ &\ Texture.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Background for About Us Page */
+.about-page {
   background-image: url("./assets/safaa-almohandis-HKWbVK1AQys-unsplash.png");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Ensures background stays in place while scrolling */
-  color: #333;
-  position: relative; /* Needed for ::before overlay to work */
-  overflow-x: hidden; /* Prevents horizontal scroll issues */
+  background-attachment: fixed;
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0; /* Ensures it sits above the background image but behind content */
-  pointer-events: none; /* Ensures it doesn’t interfere with clicks */
-}
-
-
+/* Button Styles */
 .primary-button {
-  background-color: #daa520; /* Goldenrod */
+  background-color: #daa520;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -34,9 +37,5 @@ body::before {
 }
 
 .primary-button:hover {
-  background-color: #b8860b; /* Darker goldenrod */
-}
-
-html {
-  scroll-behavior: smooth;
+  background-color: #b8860b;
 }

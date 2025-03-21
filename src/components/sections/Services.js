@@ -6,10 +6,6 @@ function Services() {
     <section className="services" id="services" aria-labelledby="services-title">
       <div className="services-container">
         <h2 id="services-title">Our Services</h2>
-        <p>
-          At <strong>Semars Holding</strong>, we provide a comprehensive range of professional services 
-          designed to support businesses and investors in navigating the Saudi market with ease.
-        </p>
         <div className="services-list">
           <div className="service-item">
             <h3>Market Entry & Advisory</h3>

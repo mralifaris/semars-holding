@@ -1,5 +1,6 @@
 /* src/components/Services.css */
 .services {
+    background-image: url("../../assets/background.png"); 
     padding: 60px 20px;
     text-align: center;
   }
