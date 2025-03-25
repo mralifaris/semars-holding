@@ -7,7 +7,7 @@ function Header() {
     <header className="header" id="header">
       <h1>Semars Holding</h1>
       <p>
-        Semars Holding Company is a luxury business advisory firm committed to
+        <strong>Semars Holding Company</strong> is a luxury business advisory firm committed to
         assisting international companies and investors in entering and thriving
         in the Saudi Arabian market. With our expert guidance, tailored
         solutions, and deep local knowledge, we ensure your business success in

@@ -20,9 +20,9 @@ body {
 /* Background for About Us Page */
 .about-page {
   background-image: url("./assets/safaa-almohandis-HKWbVK1AQys-unsplash.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-size: contain; /* Ensures the full image fits inside the container */
+  background-repeat: no-repeat;
+  background-position: top center; /* Keeps it aligned */
 }
 
 /* Button Styles */

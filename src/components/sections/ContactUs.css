@@ -2,7 +2,7 @@
 .contact {
   padding: 60px 20px;
   text-align: center;
-  background-color: #f9f9f9;
+  background: linear-gradient(to bottom, #5a3e2b, #3d2a1b, #131313, #333); /* Dark brown to footer-like blackish grey */
 }
 
 .contact h2 {
@@ -15,13 +15,26 @@
   font-size: 2.2em;
   max-width: 800px;
   margin: 0 auto;
-  color: #555;
+  color: white;
   line-height: 1.6;
   margin-bottom: 10px;
 }
+
+/* Contact Button */
 .contact-button button {
   width: 450px;
   height: 100px;
   font-size: 38px;
   font-weight: bold;
+  background-color: goldenrod;
+  color: white;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
 }
+
+.contact-button button:hover {
+  background-color: darkgoldenrod;
+}
+

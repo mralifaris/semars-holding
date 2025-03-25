@@ -1,10 +1,10 @@
 /* Testimonials Section */
 .testimonials {
-  margin-top: 100px;
-  padding: 40px;
+  margin-top: 38px;
   text-align: center;
-  opacity: 0; 
+  opacity: 0;
   transition: opacity 0.8s ease-in-out;
+  position: relative;
 }
 
 .testimonials.visible {
@@ -16,10 +16,11 @@
   font-size: 90px;
   color: white;
   font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   transform: translateY(-50px);
   opacity: 0;
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  background: transparent; /* Keeps the About Us background visible */
 }
 
 .testimonials.visible h2 {
@@ -27,40 +28,77 @@
   opacity: 1;
 }
 
-/* Container for Testimonials */
+/* Navigation Buttons Container */
+.testimonial-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  margin-right: 50px;
+}
+
+/* Buttons */
+.prev-btn,
+.next-btn {
+  background: transparent;
+  border: 2px solid #daa520;
+  font-size: 22px;
+  color: #daa520;
+  cursor: pointer;
+  padding: 15px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+}
+
+/* Disabled Buttons */
+.prev-btn.disabled,
+.next-btn.disabled {
+  background: transparent;
+  border: 2px solid #5a3e2b;
+  color: #5a3e2b;
+  cursor: not-allowed;
+}
+
+.prev-btn:hover:not(.disabled),
+.next-btn:hover:not(.disabled) {
+  background: #daa520;
+  color: white;
+}
+
+/* Testimonial Container with Dark Brown Background */
 .testimonial-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   gap: 30px;
-  flex-wrap: nowrap; /* Keeps cards in a row */
-  max-width: 1200px;
+  max-width: 1200vh;
   margin: 0 auto;
-  overflow-x: auto; /* Enables horizontal scroll on small screens */
-  padding: 20px;
+  overflow: hidden;
+  position: relative;
+  background: #5a3e2b; /* Dark brown wrapping both sides */
 }
 
 /* Individual Testimonial Card */
 .testimonial-card {
+  height: 278px;
   background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  width: 350px;
+  border-radius: 40px;
+  padding: 18px;
+  width: 520px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
-  flex-shrink: 0; /* Prevents shrinking */
-  transform: translateX(-100px);
+  flex-shrink: 0;
   opacity: 0;
-  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  transition: opacity 0.8s ease-out;
 }
 
 .testimonials.visible .testimonial-card {
-  transform: translateX(0);
   opacity: 1;
-}
-
-.testimonial-card:nth-child(2) {
-  transition-delay: 0.2s;
 }
 
 /* Testimonial Image */
@@ -68,7 +106,10 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Testimonial Name */
@@ -76,6 +117,7 @@
   font-size: 22px;
   font-weight: bold;
   color: #333;
+  text-align: center;
   margin-bottom: 10px;
 }
 
@@ -84,4 +126,6 @@
   font-size: 16px;
   color: #666;
   line-height: 1.5;
+  text-align: left;
+  padding: 0 15px;
 }

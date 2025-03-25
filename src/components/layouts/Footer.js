@@ -6,7 +6,8 @@ import {
   FaFacebook,
   FaInstagram,
 } from "react-icons/fa";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll"; // For same-page scrolling
+import { Link } from "react-router-dom"; // For navigation to other pages
 import Logo from "../../assets/logo.png";
 import "./Footer.css";
 
@@ -21,34 +22,32 @@ function Footer() {
           <h3>Home</h3>
           <ul>
             <li>
-              <Link to="about" smooth={true} duration={500}>
-                About Us
-              </Link>
+              <Link to="/about-us">About Us</Link> {/* Fixed */}
             </li>
             <li>
-              <Link to="services" smooth={true} duration={500}>
+              <ScrollLink to="services" smooth={true} duration={500}>
                 Services
-              </Link>
+              </ScrollLink>
             </li>
             <li>
-              <Link to="industries" smooth={true} duration={500}>
+              <ScrollLink to="industries" smooth={true} duration={500}>
                 Industries We Serve
-              </Link>
+              </ScrollLink>
             </li>
             <li>
-              <Link to="investment" smooth={true} duration={500}>
+              <ScrollLink to="investment" smooth={true} duration={500}>
                 Investment Opportunities
-              </Link>
+              </ScrollLink>
             </li>
             <li>
-              <Link to="research" smooth={true} duration={500}>
+              <ScrollLink to="research" smooth={true} duration={500}>
                 Research and Development
-              </Link>
+              </ScrollLink>
             </li>
             <li>
-              <Link to="events" smooth={true} duration={500}>
+              <ScrollLink to="events" smooth={true} duration={500}>
                 Events and Conferences
-              </Link>
+              </ScrollLink>
             </li>
           </ul>
         </div>
@@ -58,24 +57,24 @@ function Footer() {
           <h3>Services</h3>
           <ul>
             <li>
-              <Link to="services" smooth={true} duration={500}>
+              <ScrollLink to="services" smooth={true} duration={500}>
                 Market Entry & Advisory
-              </Link>
+              </ScrollLink>
             </li>
             <li>
-              <Link to="services" smooth={true} duration={500}>
+              <ScrollLink to="services" smooth={true} duration={500}>
                 Legal & Compliance
-              </Link>
+              </ScrollLink>
             </li>
             <li>
-              <Link to="investment" smooth={true} duration={500}>
+              <ScrollLink to="investment" smooth={true} duration={500}>
                 Investment Opportunities
-              </Link>
+              </ScrollLink>
             </li>
             <li>
-              <Link to="research" smooth={true} duration={500}>
+              <ScrollLink to="research" smooth={true} duration={500}>
                 R&D Support
-              </Link>
+              </ScrollLink>
             </li>
           </ul>
         </div>
@@ -85,14 +84,14 @@ function Footer() {
           <h3>Help</h3>
           <ul>
             <li>
-              <Link to="terms" smooth={true} duration={500}>
+              <ScrollLink to="terms" smooth={true} duration={500}>
                 Terms of Use
-              </Link>
+              </ScrollLink>
             </li>
             <li>
-              <Link to="privacy" smooth={true} duration={500}>
+              <ScrollLink to="privacy" smooth={true} duration={500}>
                 Privacy Policy
-              </Link>
+              </ScrollLink>
             </li>
           </ul>
         </div>
