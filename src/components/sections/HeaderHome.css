@@ -11,15 +11,73 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: background-image 1s ease-in-out; /* Smooth transition */
+    transition: background-image 0.6s ease-in-out; /* Smooth transition */
 }
 
-/* First Section - Left Aligned */
+/* Overlay Effect */
+.header-home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Dark transparent overlay */
+    background-image: url("../../assets/Noise & Texture.png"); 
+    background-size: cover;
+    z-index: 1; /* Ensure overlay is above background but below content */
+}
+
+/* First Section - Background Slideshow */
+.slider-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Lower index to keep slides behind overlay */
+}
+
+/* Slides */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transform: translateX(100%);
+    z-index: -1; /* Ensure slides remain behind everything */
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 0;
+}
+
+/* Header Content */
+.header-content {
+    position: relative;
+    z-index: 2; /* Ensure text & buttons appear above the overlay */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 60px 20px;
+}
+
+/* Header Intro */
 .header-intro {
     width: 100%;
     max-width: 800px;
     margin-bottom: 225px;
     margin-left: 113px;
+    position: relative;
+    z-index: 2; /* Ensure text is above overlay */
 }
 
 .header-intro h2 {
@@ -38,26 +96,47 @@
     font-size: 36px;
 }
 
-/* Indicator Dots */
-.indicator-dots {
+/* Indicator Lines (Instead of Dots) */
+.indicator-container {
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 50px;
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    left: 32%;
+    transform: translateX(-50%);
+    z-index: 3;
 }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    transition: background 0.3s;
+/* Golden Line */
+.indicator-line {
+    width: 164px; /* Adjust length */
+    height: 2px;
+    background: #daa520; /* Gold color */
+    transition: background 0.3s, width 0.3s;
+    opacity: 0.5;
 }
 
-.dot.active {
-    background: white;
+/* Active Line */
+.indicator-line.active {
+    background: rgb(26, 23, 23);
+    width: 164px; /* Enlarges active line */
+    opacity: 1;
 }
 
-/* Second Section - Centered */
+/* Connect Indicator to Images */
+.indicator-container::before {
+    content: "";
+    position: absolute;
+    top: 50px; /* Adjust to connect with images */
+    width: 2px;
+    height: 50px;
+    transform: translateX(-50%);
+}
+
+/* Centered Section */
 .header-main {
     position: relative;
     z-index: 2;
@@ -90,7 +169,7 @@
     color: white;
     padding: 12px 24px;
     border: 2px solid rgba(255, 255, 255, 0.6); /* Subtle White Border */
-    border-radius: 5px;
+    border-radius: 60px;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -100,4 +179,16 @@
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), transparent),
                 #b8860b; /* Darker Gold with White Shade */
     border-color: white;
+}
+
+/* Animation for Smooth Transition */
+@keyframes slideIndicator {
+    0% {
+        width: 50px;
+        opacity: 0.5;
+    }
+    100% {
+        width: 80px;
+        opacity: 1;
+    }
 }

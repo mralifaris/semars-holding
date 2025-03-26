@@ -1,0 +1,138 @@
+/* Navbar Container */
+.navbarhome {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    background: rgba(128, 128, 128, 0.5);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 109%;
+    max-width: 1500px;
+    min-height: 77px;
+    z-index: 1100;
+}
+
+/* Logo */
+.navbarhome-logo img {
+    margin-right: 180px;
+    height: 55px; /* Adjust logo size */
+    cursor: pointer; /* Make logo clickable */
+}
+
+/* Navigation Links */
+.navbarhome-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 40px; /* More space between menu items */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Links Styling */
+.navbarhome-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+    cursor: pointer; /* Ensure links are clickable */
+}
+
+.navbarhome-links li a:hover {
+    color: #daa520; /* Gold hover effect */
+}
+
+/* Contact Button */
+.navbar-contact {
+    border: 3px solid #daa520; /* Gold border */
+    background: transparent; /* Ensure it's not overridden */
+    color: white;
+    padding: 10px 18px;
+    border-radius: 55px; /* Keeps the rounded look */
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.navbar-contact:hover {
+    background: #daa520;
+}
+
+
+/* Search Button */
+.searchbutton {
+    background: none;
+    border: none; 
+    border-radius: 5px;
+    padding: 8px 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-icon {
+    color: #daa520; /* Gold color */
+    font-size: 18px;
+}
+
+.searchbutton:hover .search-icon {
+    color: white;
+}
+
+/* Menu Button */
+.navbarhome-menu-button {
+    margin-left: 40px;
+    margin-right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-icon {
+    font-size: 24px;
+    color: #daa520;
+    transition: color 0.3s;
+}
+
+.navbarhome-menu-button:hover .list-icon {
+    color: wheat;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .navbarhome {
+        padding: 12px 30px; /* Reduce padding on smaller screens */
+    }
+
+    .navbarhome-links {
+        gap: 25px;
+    }
+
+    .navbarhome-logo img {
+        height: 45px; /* Adjust logo for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbarhome {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        width: 95%; /* Slightly wider for small screens */
+    }
+
+    .navbarhome-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

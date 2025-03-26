@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import "./VisionMissionGoal.css";
-import { activateScrollAnimation } from "./ScrollAnimation"; // Import the animation function
+import { activateScrollAnimation } from "./ScrollAnimation"; 
 import visionIcon from "../../assets/visionIcon.png";
 import goalIcon from "../../assets/goalIcon.png";
 import missionIcon from "../../assets/missionIcon.png";
 
 function VisionMissionGoal() {
   useEffect(() => {
-    activateScrollAnimation(); // Activate animation when component loads
+    activateScrollAnimation(); 
   }, []);
 
   const vmgData = [

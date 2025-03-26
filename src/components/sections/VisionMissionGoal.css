@@ -1,6 +1,6 @@
 /* Vision, Mission, Goal Section */
 .vision-mission-goal {
-  padding: 50px;
+  margin-top: 109px;
   text-align: center;
   margin-bottom: 100px; /* Separation from the next section */
 }
@@ -18,68 +18,79 @@
   background: rgba(255, 255, 255, 0.9);
   border-radius: 50px;
   padding: 40px;
-  width: 320px;
-  height: 420px;
+  width: 300px;
+  height: 500px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px black; /* Black shadow border */
   position: relative;
-  backdrop-filter: blur(12px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0; /* Hidden initially */
-  transform: translateY(50px); /* Small initial movement to make transition smoother */
-  transition: transform 0.8s ease-out, opacity 0.8s ease-out, scale 0.3s ease-in-out;
+  transform: translateY(50px);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out,
+    filter 0.5s ease-in-out;
+  will-change: transform, opacity, filter;
+  isolation: isolate; /* Prevents background from being affected */
+   /* Fixed border shadow effect */
+   box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.5), /* Black top-left shadow */
+   10px 10px 30px rgba(255, 255, 255, 0.8); /* White bottom-right shadow*/
 }
-
-/* Hover Effect: Increase Card Size */
+.vmg-card:nth-child(2) {
+  margin-top: 50px; /* Push the middle card slightly lower */
+}
+/* Hover Effect */
 .vmg-card:hover {
   transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
 }
 
-/* Background for Icon */
+/* Relax Effect (Card Returns Slower) */
+.vmg-card:not(:hover) {
+  transition: transform 1s ease-in-out 0.3s,
+    /* Slower return with delay */ box-shadow 0.8s ease-in-out,
+    border 0.8s ease-in-out, filter 0.8s ease-in-out;
+}
+
+/* Icon Background */
 .vmg-icon-bg {
-  width: 160px;
-  height: 160px;
-  background: white; /* Original background color */
-  border-radius: 50%;
+  width: 225px;
+  height: 212px;
+  background: white;
+  border-radius: 127px; /* Increased border radius */
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Keeps shadow inside */
+
+  /* Inner and Outer Shadow for Depth */
+  box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.15),
+    /* Inner shading */ -10px -10px 20px rgba(0, 0, 0, 0.5),
+    /* Outer dark shadow */ 10px 10px 20px rgba(255, 255, 255, 0.8); /* Outer bright shadow */
+
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  will-change: box-shadow;
 }
 
-/* Hover effect with shifting shades */
-.vmg-icon-bg::before, .vmg-icon-bg::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 50%;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
+/* Hover Effect: Swap Shadow Colors */
+.vmg-card:hover .vmg-icon-bg {
+  box-shadow: 
+    inset -10px -10px 20px rgba(0, 0, 0, 0.15), /* Reverse inner shading */
+    10px 10px 20px rgba(0, 0, 0, 0.5),  /* Dark black shadow at bottom-right */
+    -10px -10px 20px rgba(255, 255, 255, 0.8); /*White highlight on top-left*/
 }
 
-.vmg-icon-bg::before {
-  top: 0;
-  background: rgba(255, 255, 255, 1);
-  z-index: 1;
+/* When Hover is Released */
+.vmg-card:not(:hover) .vmg-icon-bg {
+  transition: transform 0.5s ease-in-out;
 }
 
-.vmg-icon-bg::after {
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.vmg-icon-bg:hover::before {
-  transform: translateY(-100%);
-}
-
-.vmg-icon-bg:hover::after {
-  transform: translateY(100%);
+/* Outer glow enhancement */
+.vmg-icon-bg:hover {
+  box-shadow: 0 0 30px white; /* Stronger glow on hover */
 }
 
 /* Icon */
@@ -92,12 +103,13 @@
 
 /* Title Styling */
 .vmg-card h3 {
-  font-size: 50px;
+  font-size: 57px;
   color: black;
   font-weight: lighter;
   margin-top: 20px;
   margin-bottom: 5px;
-  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 /* Description Text */
@@ -107,16 +119,12 @@
   text-align: center;
   max-width: 85%;
   margin-top: 0;
-  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out, font-size 0.6s ease-in-out;
 }
 
-/* Hover Effect: Increase Text Size */
-.vmg-card:hover h3 {
-  font-size: 55px;
-}
-
-.vmg-card:hover p {
-  font-size: 22px;
+.vmg-card:not(:hover) p {
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Default positions before scrolling */

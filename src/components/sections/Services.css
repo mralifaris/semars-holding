@@ -1,31 +1,131 @@
-/* src/components/Services.css */
 .services {
-    background-image: url("../../assets/background.png"); 
-    padding: 60px 20px;
-    text-align: center;
+  text-align: center;
+  padding: 50px 20px;
+  background: url('../../assets/background.png') no-repeat center center/cover;
+}
+
+#services-title {
+  color: white;
+  font-size: 3rem;
+  font-family: sans-serif;
+  margin-bottom: 30px;
+}
+
+.services-list {
+  display: grid;
+  gap: 42px 0px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Dynamically set grid columns based on the number of services */
+.services-list:has(.service-card:nth-child(3)) {
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 160px;
+}
+
+.services-list:has(.service-card:nth-child(2)):not(:has(.service-card:nth-child(3))) {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.service-card {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 15px;
+  border-radius: 51px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  max-width: 230px;
+  min-height: 247px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Push the second row forward */
+.service-card:nth-child(4) {
+  grid-column-start: 1;
+  margin-left: 120px;
+}
+
+.service-card:nth-child(5) {
+  grid-column-start: 3;
+  margin-right: 250px;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.service-image {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.service-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  max-width: 220px;
+}
+
+.service-button {
+  margin-top: 50px;
+  padding: 10px 20px;
+  background: #b68d2a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.service-button:hover {
+  background: #75560e;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #services-title {
+    font-size: 2.5rem;
   }
-  
-  .services h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    color: #333;
+
+  .services-list {
+    margin-left: 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  
-  .services ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+
+  .service-card {
+    max-width: 200px;
+    min-height: 230px;
   }
-  
-  .services li {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    text-align: center;
-    color: #555;
+
+  .service-card:nth-child(4),
+  .service-card:nth-child(5) {
+    grid-column-start: auto;
+    margin-left: 0;
   }
+
+  .service-title {
+    font-size: 1rem;
+  }
+
+  .service-description {
+    font-size: 0.8rem;
+  }
+
+  .service-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

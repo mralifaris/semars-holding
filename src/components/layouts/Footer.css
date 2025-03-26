@@ -1,5 +1,6 @@
 /* Footer Styles */ 
 .footer {
+  position: relative;
   background-color: #333;
   color: white;
   padding: 40px 60px; /* Increased left & right padding */

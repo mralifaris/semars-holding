@@ -1,5 +1,6 @@
 /* src/components/ContactUs.css */
 .contact {
+  position: relative;
   padding: 60px 20px;
   text-align: center;
   background: linear-gradient(to bottom, #5a3e2b, #3d2a1b, #131313, #333); /* Dark brown to footer-like blackish grey */

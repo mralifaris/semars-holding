@@ -15,6 +15,7 @@ import HeaderHome from "./components/sections/HeaderHome";
 import Services from "./components/sections/Services.js";
 
 import "./App.css";
+import NavbarHome from "./components/layouts/NavbarHome.js";
 
 function App() {
   return (
@@ -37,13 +38,13 @@ function MainContent() {
 
   return (
     <div className="App">
-      <Navbar />
       <div className="background-overlay">
         <Routes>
           <Route 
             path="/" 
             element={
               <>
+                <NavbarHome/>
                 <HeaderHome/>
                 <WhySemars />
                 <Services/>
@@ -55,6 +56,7 @@ function MainContent() {
             path="/about-us" 
             element={
               <>
+                <Navbar />
                 <Header />
                 <VisionMissionGoal />
                 <CoreValues />
